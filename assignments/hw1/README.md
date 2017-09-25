@@ -233,7 +233,7 @@ GET /api/hw1?start_date=2016-10-01&end_date=2016-10-05
   "2016-10-01": {
     "total_hits": 1000,
     "total_users": 100,
-    "top_10_pages": [x
+    "top_10_pages": [
       "/", "/id1", "/id2", "/id3", "/id4", "/id5", "/id6", "/id7", "/id8", "/id9"
     ],
     "average_session_time": 300.0,
