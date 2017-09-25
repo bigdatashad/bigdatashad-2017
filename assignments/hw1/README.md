@@ -70,13 +70,13 @@
 На кластере в HDFS `/user/bigdatashad/logs` веб-сервера социальной сети сохраняют логи, каждый день -- в отдельной директории:
 
 ```
-$ hadoop fs -ls /user/bigdatashad/logs
+$ hdfs dfs -ls /user/bigdatashad/logs
 Found 24 items
 drwxr-xr-x   - bigdatashad bigdatashad          0 2017-09-25 16:27 /user/bigdatashad/logs/2017-09-01
 drwxr-xr-x   - bigdatashad bigdatashad          0 2017-09-25 16:25 /user/bigdatashad/logs/2017-09-02
 ...
 
-$ hadoop fs -ls /user/bigdatashad/logs/2017-09-02
+$ hdfs dfs -ls /user/bigdatashad/logs/2017-09-02
 Found 1 items
 -rw-r--r--   3 bigdatashad bigdatashad 1476395008 2017-09-25 16:24 /user/bigdatashad/logs/2017-09-02/access.log.2017-09-02
 ```
@@ -108,11 +108,6 @@ Found 1 items
   * Идентификационная строка браузера (User-Agent; `"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36"`).
 
 Считаем, что пользователь идентифицируется IP-адресом. Пользователи с различными IP-адресами считаются разными.
-
-Из каждой записи можно извлечь информацию о браузере пользователя. Вам предлагается придумать набор эвристик,
-позволяющих по User-Agent опознать браузер пользователя. Для упрощения задачи ответ нужно выбрать среди множества
-Chrome, Yandex Browser, Firefox, Safari, Internet Explorer, Other. В приведенном выше примере правильные ответы --
-Chrome, Other, Chrome, Other, Chrome, Firefox.
 
 Также по IP-адресу пользователя можно восстановить его местоположение. В файле на кластере
 `/user/bigdatashad/dicts/IP2LOCATION-LITE-DB1.CSV` лежит база соответствия стран и IP-адресов.
